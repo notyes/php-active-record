@@ -5,12 +5,13 @@ This takes the ActiveRecord and Database Library from 3.0 and makes it work with
 
 Setup
 ------------------------
-composer.phar require sujayjaju/PHPActiveRecord
+composer.phar require sujayjaju/php-active-record
 
 Usage
 ------------------------
 ```php
-use ActiveRecord/DB
+// Include
+use ActiveRecord/DB;
 
 ...
 
@@ -38,13 +39,19 @@ Documentation
 ------------------------
 
 For more on how to use active records: Refer CodeIgnitor's reference documentation at:
+
 [Database Reference](http://www.codeigniter.com/userguide3/database/index.html)
 
-$this->db gets replaced by DB::get("db_reference_name")
-
+```php
+$this->db
+```
+gets replaced by
+```php
+DB::get("db_reference_name")
+```
 
 Contributions
 ------------------------
-Thanks to the setup by Documentopia.com
+Thanks to the base setup by Documentopia.com
 
 
