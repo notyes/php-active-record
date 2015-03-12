@@ -1,11 +1,15 @@
 <?php
 namespace ActiveRecord;
 
-class DB
+class ActiveDatabase
 {
     public static $db = array();
     public static $db_config = array();
 
+    /**
+     * @param string $config_name
+     * @return \CI_DB_query_builder|null
+     */
     public static function get($config_name)
     {
         require_once (__DIR__ . '/../database/DB.php');

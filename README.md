@@ -11,7 +11,7 @@ Usage
 ------------------------
 ```php
 // Include
-use ActiveRecord/DB;
+use ActiveRecord\ActiveDatabase;
 
 ...
 
@@ -27,10 +27,10 @@ $db_config = array(
 );
 
 // Add Config and give it a name
-DB::addConfig("read", $db_config);
+ActiveDatabase::addConfig("read", $db_config);
 
 //Use the named connection
-$query = DB::get("read")->get('table_name')
+$query = ActiveDatabase::get("read")->get('table_name')
 $row = $query->result_array();
 print_r($row);
 ```
@@ -47,7 +47,7 @@ $this->db
 ```
 gets replaced by
 ```php
-DB::get("db_reference_name")
+ActiveDatabase::get("db_reference_name")
 ```
 
 Contributions
