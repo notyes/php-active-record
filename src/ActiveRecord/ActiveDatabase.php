@@ -1,20 +1,24 @@
 <?php
 namespace ActiveRecord;
 
-class DB
+class ActiveDatabase
 {
     public static $db = array();
     public static $db_config = array();
 
+    /**
+     * @param string $config_name
+     * @return \CI_DB_query_builder|null
+     */
     public static function get($config_name)
     {
         require_once (__DIR__ . '/../database/DB.php');
 
-        if (isset($db[$config_name])) {
-            return ($db[$config_name]);
-        } else if (isset($db_config[$config_name])) {
-            $db[$config_name] = DB($db_config[$config_name]);
-            return ($db[$config_name]);
+        if (isset(self::$db[$config_name])) {
+            return (self::$db[$config_name]);
+        } else if (isset(self::$db_config[$config_name])) {
+            self::$db[$config_name] = DB(self::$db_config[$config_name]);
+            return (self::$db[$config_name]);
         } else {
             return null;
         }
@@ -36,24 +40,11 @@ class DB
             && array_key_exists("database", $config)
             && array_key_exists("dbdriver", $config)
         ){
-            $db_config[$config_name] = $config;
+            self::$db_config[$config_name] = $config;
             return true;
         }
 
         return false;
     }
-
-    function log_message($level = 'error', $message, $php_error = FALSE)
-    {
-        if (DB_DEBUG) echo $message . "\n";
-    }
-
-    function show_error($message, $status_code = 500, $heading = 'An Error Was Encountered')
-    {
-        if (DB_DEBUG) echo $message . "\n";
-    }
-
 }
-
-
 ?>

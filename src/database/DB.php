@@ -216,3 +216,13 @@ function &DB($params = '', $query_builder_override = NULL)
 	$DB->initialize();
 	return $DB;
 }
+
+function log_message($level = 'error', $message, $php_error = FALSE)
+{
+    if (DB_DEBUG) echo $message . "\n";
+}
+
+function show_error($message, $status_code = 500, $heading = 'An Error Was Encountered')
+{
+    if (DB_DEBUG) echo $message . "\n";
+}
