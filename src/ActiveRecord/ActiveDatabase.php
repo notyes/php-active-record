@@ -26,8 +26,12 @@ class ActiveDatabase
 
     public static function addConfig($config_name, $config)
     {
-        define('DB_DEBUG', false);
-        define('DB_LOAD_FORGE', true);
+        if(!defined('DB_DEBUG'))
+            define('DB_DEBUG', false);
+
+        if(!defined('DB_LOAD_FORGE'))
+            define('DB_LOAD_FORGE', true);
+
         // This should be the base path to the database folder
         if ( ! defined('BASEPATH')) {
             define('BASEPATH', __DIR__ . '/../');
