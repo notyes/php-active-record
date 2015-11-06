@@ -36,6 +36,9 @@ class ActiveDatabase
         if ( ! defined('BASEPATH')) {
             define('BASEPATH', __DIR__ . '/../');
         }
+        if ( ! defined('APPPATH')) {
+            define('APPPATH', __DIR__ . '/../');
+        }
 
         if(is_array($config)
             && array_key_exists("hostname", $config)
