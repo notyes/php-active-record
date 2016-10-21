@@ -1,5 +1,5 @@
 {
-    "name": "sujayjaju/php-active-record",
+    "name": "notyes/php-active-record",
     "description": "Stand Alone Active Record Library. CodeIgniter's ActiveRecord and Database Library from 3.0RC2, without the rest of CodeIgniter",
     "type": "library",
     "license": "MIT",
