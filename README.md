@@ -5,7 +5,7 @@ This takes the ActiveRecord and Database Library from 3.0 and makes it work with
 
 Setup
 ------------------------
-composer require notyes/php-active-record
+composer require notyes/php-active-record dev-master
 
 Usage
 ------------------------
